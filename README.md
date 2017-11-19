@@ -1,1 +1,1 @@
-# Boilerplatle Meteor Project
+# Notes Application
