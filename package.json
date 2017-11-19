@@ -2,10 +2,13 @@
   "name": "short-lnk",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "test-practical": "meteor test --driver-package=practicalmeteor:mocha",
+    "test-chrome": "TEST_BROWSER_DRIVER=chrome meteor test --once --driver-package meteortesting:mocha" 
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
+    "bcrypt": "^1.0.3",
     "meteor-node-stubs": "~0.2.4",
     "moment": "^2.17.1",
     "react": "^15.6.2",
@@ -16,5 +19,9 @@
   },
   "engines": {
     "node": "4.8.4"
+  },
+  "devDependencies": {
+    "chromedriver": "^2.33.2",
+    "selenium-webdriver": "^3.6.0"
   }
 }
