@@ -13,6 +13,7 @@
     "meteor-node-stubs": "~0.2.4",
     "moment": "^2.17.1",
     "react": "^15.6.2",
+    "react-addons-pure-render-mixin": "^15.6.2",
     "react-dom": "^15.6.2",
     "react-router": "^3.2.0",
     "shortid": "^2.2.6",
@@ -23,7 +24,9 @@
   },
   "devDependencies": {
     "chromedriver": "^2.33.2",
+    "enzyme": "^2.7.1",
     "expect": "^1.20.2",
+    "react-addons-test-utils": "^15.6.2",
     "selenium-webdriver": "^3.6.0"
   }
 }
