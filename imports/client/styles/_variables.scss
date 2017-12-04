@@ -41,9 +41,8 @@ $header-color: white;
 $header-height: 6rem;
 
 // Item
-$item-bg: $light-grey;
-$item-border: darken($item-bg, 8%);
-$item-text-color: $dark-grey;
+$item-border-width: 4px;
+$item-header-height: 10.5rem;
 
 // Page Content
 $page-content-sidebar-width: 30rem; // 30% of width of the app

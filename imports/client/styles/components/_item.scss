@@ -1,26 +1,75 @@
+// Create Note Button
+.create-note-button {
+    background-color: $button-bg;
+    border: none;
+    color: $button-color;
+    cursor: pointer;
+    font-size: $base-font-size;
+    line-height: 1.2;
+    padding: $input-spacing;    
+    text-transform: uppercase;
+    width: 100%;
+}
+
+// Side content
+.side-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;    
+}
+
 // Item List
 .item-list {
     background-color: white;
     border: 1px solid $grey;
+    flex: 1;
     overflow-y: scroll;
+    width: 100%;
+}
+
+.item-list__header {
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    padding: 0 $space $space $space;
     width: 100%;
 }
 
 // Item
 .item {
-    background: $item-bg;
-    border: 1px solid $item-border;
-    margin-bottom: $space;
+    border-left: $item-border-width solid transparent;
+    cursor: pointer;
     padding: $space;
+    transition: background-color .3s ease, border-left .3s ease;
 }
 
-.item__message {
-    color: $item-text-color;
+.item:hover {
+    background-color: $light-grey;
+    border-left: $item-border-width solid $grey;
 }
 
-.item__status-message {
-    color: $item-text-color;
+.item--selected, .item--selected:hover {
+    background-color: $light-grey;
+    border-left: $item-border-width solid $brand-primary;
+}
+
+.item__title {
+    font-weight: normal;
+    font-size: $base-font-size;
+    margin-bottom: .4rem;
+}
+
+.item--selected .item__title {
+    font-weight: bold;
+}
+
+.item__subtitle {
+    color: $dark-grey;
+    margin: 0;    
+}
+
+.empty-item {
     font-style: italic;
+    padding: $space;
     text-align: center;
-    margin: 0;
 }
