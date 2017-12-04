@@ -30,7 +30,7 @@
 .item-list__header {
     display: flex;
     flex-direction: column;
-    height: 5rem;
+    height: fit-content;
     padding: 0 $space $space $space;
     width: 100%;
 }

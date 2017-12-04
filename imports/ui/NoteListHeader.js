@@ -12,7 +12,7 @@ export const NoteListHeader = (props) => {
                         props.Session.set('selectedNoteId', res);
                     }
                 });
-            }}>Create New Note</button>
+            }}>Create Note</button>
         </div>
     );
 };
