@@ -46,3 +46,4 @@ $item-text-color: $dark-grey;
 // Page Content
 $page-content-sidebar-width: 30rem; // 30% of width of the app
 $page-content-main-width: calc(#{$site-max-width} - #{$page-content-sidebar-width});
+$page-content-height: calc(100vh - #{$header-height});
