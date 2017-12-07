@@ -12,6 +12,11 @@
     width: 100%;
 }
 
+.create-note-button:hover {
+    background-color: darken($color: $button-bg, $amount: 5);
+    transition: background-color .1s ease;
+}
+
 // Side content
 .side-content {
     display: flex;

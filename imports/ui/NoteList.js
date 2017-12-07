@@ -13,7 +13,7 @@ export class NoteList extends React.Component {
         super(props);
         this.state = {
             searchKey: ''
-        }
+        };
     }
     searchBox() {
         return <input type="text" onChange={this.handleSearch.bind(this)} value={this.state.searchKey} placeholder="Search"/>
@@ -27,7 +27,7 @@ export class NoteList extends React.Component {
             <div className="side-content">
                 <NoteListHeader/>
                 { this.searchBox() }
-                <div className="item-list">
+                <div id="note-list" className="item-list">
                     { this.props.notes.length === 0 ? <NoteListEmptyItem/> : undefined}
                     { 
                         this.props.notes.map((note) => {

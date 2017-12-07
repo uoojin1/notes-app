@@ -29,6 +29,13 @@
     color: $button-secondary-color;    
 }
 
+.button--secondary:hover {
+    background: $brand-primary;
+    color: white;
+    transition: background .3s ease;
+    transition: color .3s ease;
+}
+
 .button--link-text {
     background: none;
     margin: 0;
