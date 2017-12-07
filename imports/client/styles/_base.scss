@@ -41,3 +41,7 @@ input[type=text], input[type=email], input[type=password], textarea {
     margin-bottom: $space;
     padding: $input-spacing;
 }
+
+.is-nav-open input[type=text], input[type=email], input[type=password], textarea .search-box {
+    margin: 0;
+}
