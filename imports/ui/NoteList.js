@@ -8,23 +8,43 @@ import NoteListHeader from './NoteListHeader';
 import NoteListItem from './NoteListItem';
 import NoteListEmptyItem from './NoteListEmptyItem';
 
-export const NoteList = (props) => {
-    return (
-        <div className="side-content">
-            <NoteListHeader/>
-            <div className="item-list">
-                { props.notes.length === 0 ? <NoteListEmptyItem/> : undefined}
-                {props.notes.map((note) => {
-                    return <NoteListItem key={note._id} note={note}/>
-                })}
+export class NoteList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            searchKey: ''
+        }
+    }
+    searchBox() {
+        return <input type="text" onChange={this.handleSearch.bind(this)} value={this.state.searchKey} placeholder="Search"/>
+    }
+    handleSearch(e) {
+        const searchKey = e.target.value;
+        this.setState({searchKey});
+    }
+    render() {
+        return (
+            <div className="side-content">
+                <NoteListHeader/>
+                { this.searchBox() }
+                <div className="item-list">
+                    { this.props.notes.length === 0 ? <NoteListEmptyItem/> : undefined}
+                    { 
+                        this.props.notes.map((note) => {
+                            if(note.title.toLowerCase().includes(this.state.searchKey.toLowerCase()) ||
+                                note.body.toLowerCase().includes(this.state.searchKey.toLowerCase())){
+                                    return <NoteListItem key={note._id} note={note}/>;
+                            }
+                        }) 
+                    }
+                </div>
             </div>
-        </div>
-        
-    );
+        );
+    }
 };
 
 NoteList.propTypes = {
-    notes: React.PropTypes.array.isRequired
+    notes: React.PropTypes.array.isRequired,
 };
 
 export default createContainer(() => {
