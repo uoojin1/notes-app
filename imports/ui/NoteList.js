@@ -15,14 +15,6 @@ export class NoteList extends React.Component {
         this.state = {
             notes: props.notes,
             searchKey: '',
-            collection: [
-                {key: 1, value: 'a'},
-                {key: 2, value: 'b'},
-                {key: 3, value: 'c'},
-                {key: 4, value: 'd'},
-                {key: 5, value: 'e'},
-                {key: 6, value: 'e'}
-              ]
         };
     }
     searchBox() {
@@ -32,46 +24,14 @@ export class NoteList extends React.Component {
         const searchKey = e.target.value;
         this.setState({searchKey});
     }
-    item({value, index, onChange, onRemove, decorateHandle, key, note}){
-        return(
-            <div>
-                <span onClick={onRemove}>X</span>
-                {decorateHandle(<span>+</span>)}
-                <input
-              onChange={e => {
-                const val = e.target.value
-                onChange(val)
-              }}
-              value={value}
-            />
-            </div>
-        )
-    }
-    Item ({value, index, onChange, onRemove, decorateHandle, key, note}) {
-        return (
-          <div>
-            <span onClick={onRemove}>X</span>
-            {decorateHandle(<span>+</span>)}
-            <NoteListItem key={note._id} note={note}/>
-          </div>
-        )
-      }
     
     render() {
         return (
             <div className="side-content">
                 <NoteListHeader/>
-                
                 { this.searchBox() }
                 <div id="note-list" className="item-list">
                     { this.props.notes.length === 0 ? <NoteListEmptyItem/> : undefined}
-                    {/* {<Sortable
-                        collection={this.state.collection}
-                        onChange={collection => {
-                        this.setState({collection})
-                        }}
-                        Component={this.item}
-                    />} */}
                     { 
                         this.props.notes.map((note) => {
                             console.log(this.props.notes);
